@@ -1,0 +1,54 @@
+{
+  "mcpServers": {
+    "hexstrike-ai": {
+      "command": "python3",
+      "args": [
+        "/home/kali/Desktop/hexstrike-ai-master/hexstrike-ai-master/hexstrike_mcp.py",
+        "--server",
+        "http://localhost:8888"
+      ],
+      "description": "HexStrike AI v6.1 - AI驱动的渗透测试平台 | 64种安全工具 | 6个AI代理",
+      "timeout": 300000,
+      "disabled": false,
+      "env": {
+        "HEXSTRIKE_HOST": "127.0.0.1",
+        "HEXSTRIKE_PORT": "8888",
+        "PYTHONPATH": "/home/kali/Desktop/hexstrike-ai-master/hexstrike-ai-master"
+      },
+      "capabilities": {
+        "tools": true,
+        "resources": true,
+        "prompts": false
+      },
+      "metadata": {
+        "version": "6.1.0",
+        "category": "安全测试",
+        "tags": [
+          "渗透测试",
+          "CTF",
+          "漏洞扫描",
+          "安全自动化",
+          "AI代理"
+        ],
+        "features": [
+          "智能端口扫描 (Nmap, Rustscan, Masscan)",
+          "Web应用测试 (Nuclei, SQLMap, FFuf)",
+          "漏洞扫描与利用",
+          "密码破解 (Hashcat, Hydra, John)",
+          "二进制分析 (Ghidra, Pwntools, Angr)",
+          "AI智能决策与工具选择",
+          "CTF自动解题",
+          "渗透测试链生成"
+        ]
+      }
+    }
+  },
+  "defaults": {
+    "timeout": 300000,
+    "maxRetries": 3,
+    "logging": {
+      "enabled": true,
+      "level": "info"
+    }
+  }
+}

@@ -163,6 +163,32 @@ from core.execution import (
 )
 from core.tool_factory import create_tool_executor
 
+# ============================================================================
+# OPTIMIZATION MODULES - 性能优化与高级功能
+# ============================================================================
+try:
+    # 导入优化模块
+    from advanced_features import PentestChain, IntelligentFuzzer, CTFSolver as OptimizedCTFSolver
+    from ai_intelligence import (
+        NLPIntentClassifier,
+        IntelligentDecisionEngine as AIDecisionEngine,
+        LearningSystem,
+        IntelligentRecommender
+    )
+    from performance_optimizer import (
+        LazyToolLoader,
+        SmartCache,
+        ParallelExecutor,
+        WebSocketManager,
+        PerformanceMonitor as OptimizedPerformanceMonitor,
+        smart_cache
+    )
+    OPTIMIZATION_ENABLED = True
+    logger.info("✅ Optimization modules loaded successfully!")
+except ImportError as e:
+    logger.warning(f"⚠️ Optimization modules not available: {e}")
+    OPTIMIZATION_ENABLED = False
+
 # Phase 2: Tool Abstraction Layer
 from tools.network.nmap import NmapTool
 from tools.network.httpx import HttpxTool
@@ -266,6 +292,34 @@ bugbounty_manager = BugBountyWorkflowManager()
 # Global Web Testing Framework instances
 http_testing_framework = HTTPTestingFramework()
 browser_agent = BrowserAgent()
+
+# ============================================================================
+# OPTIMIZATION MODULE INSTANCES - 优化模块实例
+# ============================================================================
+if OPTIMIZATION_ENABLED:
+    # 高级功能实例
+    lazy_loader = LazyToolLoader()
+    smart_cache_system = SmartCache()
+    parallel_executor = ParallelExecutor(max_workers=10)
+    ws_manager = WebSocketManager()
+    optimized_monitor = OptimizedPerformanceMonitor()
+    
+    # AI智能实例
+    nlp_classifier = NLPIntentClassifier()
+    ai_recommender = IntelligentRecommender()
+    learning_system = LearningSystem()
+    
+    logger.info("✅ Optimization instances initialized")
+else:
+    # 占位实例
+    lazy_loader = None
+    smart_cache_system = None
+    parallel_executor = None
+    ws_manager = None
+    optimized_monitor = None
+    nlp_classifier = None
+    ai_recommender = None
+    learning_system = None
 
 # ============================================================================
 # PROCESS MANAGEMENT FOR COMMAND TERMINATION (v5.0 ENHANCEMENT)
